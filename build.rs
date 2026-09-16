@@ -37,7 +37,7 @@ fn generate_vial_config() {
         .read_to_end(&mut compressed)
         .unwrap();
 
-    let keyboard_id = vec![0x72, 0x6f, 0x42, 0x61, 0x52, 0x4d, 0x4b, 0x01];
+    let keyboard_id: Vec<u8> = vec![0x72, 0x6f, 0x42, 0x61, 0x52, 0x4d, 0x4b, 0x01];
     let declarations = [
         const_declaration!(pub VIAL_KEYBOARD_DEF = compressed),
         const_declaration!(pub VIAL_KEYBOARD_ID = keyboard_id),
@@ -46,4 +46,3 @@ fn generate_vial_config() {
     .join("\n");
     fs::write(out_file, declarations).unwrap();
 }
-
