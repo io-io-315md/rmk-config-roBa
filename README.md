@@ -10,6 +10,7 @@ existing ZMK repository.
 - `rmk-peripheral.uf2`: left half, including the rotary encoder
 - Controller: Seeed XIAO nRF52840 on both halves
 - Split transport: Bluetooth LE
+- Host transport: Bluetooth LE 1M PHY for Windows adapter compatibility
 
 ## Preserved behavior
 
@@ -23,6 +24,7 @@ existing ZMK repository.
 - Motion distance above 10 also enables Enter as mouse button 4 for one press
 - J and L keep mouse mode; other keys immediately return to keyboard mode
 - PMW3610 reports at 125 Hz to avoid flooding the BLE event path
+- The host connection uses 1M PHY; the split link between halves remains 2M PHY
 
 ## Build
 
@@ -54,4 +56,3 @@ XIAO nRF52840 controllers:
 The reset image is only needed for this first migration from ZMK. Do not flash
 it again for ordinary RMK firmware updates because it clears saved settings and
 Bluetooth bonds.
-

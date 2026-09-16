@@ -12,6 +12,7 @@ rmk = { version = "=0.9.0", default-features = false, features = [
     "vial",
     "watchdog",
     "nrf52840_ble",
+    "use_1m_phy",
     "split",
     "async_matrix",
     "adafruit_bl",
@@ -65,4 +66,3 @@ debug = true
 opt-level = "z"
 overflow-checks = false
 lto = "fat"
-
