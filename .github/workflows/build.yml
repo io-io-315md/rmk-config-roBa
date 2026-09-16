@@ -1,0 +1,40 @@
+name: Build RMK firmware
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  RUST_MIN_STACK: "67108864"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@1.96.0
+        with:
+          targets: thumbv7em-none-eabihf
+          components: llvm-tools
+      - uses: cargo-bins/cargo-binstall@main
+      - name: Install build tools
+        run: cargo binstall cargo-make flip-link -y
+      - name: Install ARM GCC
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi
+      - uses: Swatinem/rust-cache@v2
+      - name: Build firmware
+        run: |
+          cargo build --release
+          cargo make uf2 --release
+      - name: Upload firmware
+        uses: actions/upload-artifact@v7
+        with:
+          name: roBa-RMK-firmware
+          path: |
+            rmk-central.uf2
+            rmk-peripheral.uf2
+            rmk-central.hex
+            rmk-peripheral.hex
+
