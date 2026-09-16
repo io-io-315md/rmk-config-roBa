@@ -200,7 +200,7 @@ split_peripherals_num = 1
 enabled = true
 
 [host]
-vial_enabled = false
+vial_enabled = true
 
 [split]
 connection = "ble"
@@ -251,4 +251,3 @@ debounce_ms = 5
 dcdc_reg0 = true
 dcdc_reg1 = true
 dcdc_reg0_voltage = "3V3"
-
