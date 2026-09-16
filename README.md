@@ -39,7 +39,19 @@ cargo make uf2 --release
 
 ## First RMK flash
 
-Flash both halves when moving from ZMK to RMK. Remove the old keyboard pairing
-from the host, then pair the device named `roBa RMK`. The old ZMK settings in
-flash are not used as RMK settings.
+The current firmware is ZMK, so use the included ZMK settings-reset image once
+on both halves before the first RMK flash. The same reset file is used for both
+XIAO nRF52840 controllers:
+
+1. Put the left half into its UF2 bootloader and copy
+   `settings_reset-seeeduino_xiao_ble-zmk.uf2` to it.
+2. Put the left half into the bootloader again and copy `rmk-peripheral.uf2`.
+3. Put the right half into its UF2 bootloader and copy the same settings-reset
+   UF2 to it.
+4. Put the right half into the bootloader again and copy `rmk-central.uf2`.
+5. Remove the old `roBa` pairing from the host and pair `roBa RMK`.
+
+The reset image is only needed for this first migration from ZMK. Do not flash
+it again for ordinary RMK firmware updates because it clears saved settings and
+Bluetooth bonds.
 

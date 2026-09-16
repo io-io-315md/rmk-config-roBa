@@ -4,4 +4,4 @@
 *.json text eol=lf
 *.yml text eol=lf
 *.md text eol=lf
-
+*.uf2 binary

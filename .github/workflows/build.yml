@@ -37,4 +37,4 @@ jobs:
             rmk-peripheral.uf2
             rmk-central.hex
             rmk-peripheral.hex
-
+            migration/settings_reset-seeeduino_xiao_ble-zmk.uf2
