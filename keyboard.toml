@@ -27,7 +27,7 @@ A S D F G WM(S,LShift|LGui)                    Minus H J K L Quote
 Z X C V B TH(WM(Semicolon,LShift),MO(6),LAYER) Semicolon N M Comma Dot Slash
 LCtrl LGui LAlt TH(Macro0,MO(1),ZEN) LT(2,Tab,LAYER) Space MT(Backspace,LShift,BSP) Enter F24
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "FUNCTION"
@@ -37,7 +37,7 @@ Kc1 Kc2 Kc3 Kc4 Kc5 _     F13 Kc6 Kc7 Kc8 Kc9 Kc0
 _ _ _ _ _ _               _ _ _ _ _ F11
 _ _ _ _ _ _               _ _ F12
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "NUM"
@@ -47,7 +47,7 @@ Slash Left Down Right Kp8 TH(Kp0,Insert,LAYER)             Minus Kc1 Kc2 Kc3 Kc4
 LShift TH(Kp1,End,LAYER) TH(Kp2,Down,LAYER) TH(Kp3,PageDown,LAYER) Dot Equal _ SHIFTED(LeftBracket) SHIFTED(RightBracket) SHIFTED(LeftBracket) SHIFTED(RightBracket) Backslash
 _ _ _ _ _ _                                               _ _ Backslash
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "ARROW"
@@ -57,7 +57,7 @@ Home Left Down Right End _                         _ _ _ _ _ _
 LShift WM(Left,LGui|LShift) _ WM(Right,LGui|LShift) _ _ _ _ _ _ _ _
 _ _ _ _ _ _                                       _ _ _
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "MOUSE"
@@ -67,7 +67,7 @@ _ _ _ _ _ _     _ _ MouseBtn1 _ MouseBtn2 _
 _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ _ F24
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "SCROLL"
@@ -77,7 +77,7 @@ _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ _ _
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "BLUETOOTH"
@@ -87,7 +87,7 @@ _ _ _ _ _ _     _ _ _ _ _ _
 _ Kc1 Kc2 Kc3 _ _ Bootloader _ _ _ _ User7
 _ _ _ _ _ _     _ _ Macro2
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [[keymap.layer]]
 name = "MOUSE_BACK"
@@ -97,7 +97,7 @@ _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ MouseBtn4 F24
 """
-encoders = [["MouseWheelUp", "MouseWheelDown"]]
+encoders = [["MouseWheelDown", "MouseWheelUp"]]
 
 [behavior.combo]
 timeout = "50ms"
