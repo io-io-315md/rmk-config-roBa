@@ -121,9 +121,10 @@ mod tests {
 
     async fn typing(keymap: &KeyMap<'_>, pos: (u8, u8), expected: HidKeyCode) {
         key(pos, true);
-        Timer::after_millis(70).await;
+        // Enter must exit mouse mode immediately; K waits for its combo window.
+        Timer::after_millis(if expected == HidKeyCode::Enter { 2 } else { 70 }).await;
         match USB_REPORT_CHANNEL.try_receive().expect("missing keyboard report") {
-            Report::KeyboardReport(report) => assert!(report.keycodes.contains(&(expected as u8))),
+            Report::KeyboardReport(report) => assert_eq!(report.keycodes, [expected as u8, 0, 0, 0, 0, 0]),
             _ => panic!("normal key unexpectedly sent a mouse button"),
         }
         assert_eq!(keymap.active_layer(), 0);
@@ -184,7 +185,9 @@ mod tests {
                     mouse_report(0);
                 }
 
+                assert_eq!(keymap.active_layer(), 4);
                 typing(&keymap, ENTER, HidKeyCode::Enter).await;
+                typing(&keymap, J, HidKeyCode::J).await;
                 motion(&keymap).await;
                 typing(&keymap, K, HidKeyCode::K).await;
 

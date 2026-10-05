@@ -65,7 +65,7 @@ keys = """
 _ _ _ _ _       _ _ _ _ _
 _ _ _ _ _ _     _ _ MouseBtn1 _ MouseBtn2 _
 _ _ _ _ _ _     _ _ _ _ _ _
-_ _ _ _ _ _     _ _ F24
+_ _ _ _ _ _     _ Enter F24
 """
 encoders = [["MouseWheelUp", "MouseWheelDown"]]
 
