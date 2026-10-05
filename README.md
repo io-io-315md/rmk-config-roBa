@@ -21,7 +21,9 @@ existing ZMK repository.
 - Tap Backspace with a 100 ms hold for Left Shift; quick double-tap hold repeats Backspace
 - Tap Delete, or Escape while Shift is held, on the lower-right key
 - Trackball motion activates the J/L mouse-button layer
-- Motion distance above 10 also enables Enter as mouse button 4 for one press
+- In mouse mode, J+K sends mouse button 4 (Back), and K+L sends mouse button 5 (Forward)
+- Mouse combos use a 50 ms window and keep mouse mode; in keyboard mode J/K/L type normally
+- Enter always sends Enter and returns to keyboard mode
 - J and L keep mouse mode; other keys immediately return to keyboard mode
 - PMW3610 reports at 125 Hz to avoid flooding the BLE event path
 - The host connection uses 1M PHY; the split link between halves remains 2M PHY

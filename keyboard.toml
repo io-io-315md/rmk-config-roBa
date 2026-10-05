@@ -90,12 +90,12 @@ _ _ _ _ _ _     _ _ Macro2
 encoders = [["MouseWheelUp", "MouseWheelDown"]]
 
 [[keymap.layer]]
-name = "MOUSE_BACK"
+name = "RESERVED"
 keys = """
 _ _ _ _ _       _ _ _ _ _
 _ _ _ _ _ _     _ _ _ _ _ _
 _ _ _ _ _ _     _ _ _ _ _ _
-_ _ _ _ _ _     _ MouseBtn4 F24
+_ _ _ _ _ _     _ _ F24
 """
 encoders = [["MouseWheelUp", "MouseWheelDown"]]
 
@@ -107,6 +107,8 @@ combos = [
   { actions = ["S", "A"], output = "Macro1" },
   { actions = ["L", "Quote"], output = "WM(Quote,LShift)" },
   { actions = ["C", "V"], output = "Equal" },
+  { actions = ["MouseBtn1", "K"], output = "MouseBtn4", layer = 4 },
+  { actions = ["K", "MouseBtn2"], output = "MouseBtn5", layer = 4 },
 ]
 
 [behavior.morse]
@@ -169,14 +171,6 @@ device_id = 0
 target_layer = 4
 timeout = "86400s"
 threshold = 2
-deactivate_on_key = true
-reset_timeout_on_key = false
-
-[[behavior.auto_mouse_layer]]
-device_id = 1
-target_layer = 7
-timeout = "86400s"
-threshold = 1
 deactivate_on_key = true
 reset_timeout_on_key = false
 
