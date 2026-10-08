@@ -34,7 +34,7 @@ name = "FUNCTION"
 keys = """
 F1 F2 F3 F4 F5             F6 F7 F8 F9 F10
 Kc1 Kc2 Kc3 Kc4 Kc5 _     F13 Kc6 Kc7 Kc8 Kc9 Kc0
-_ _ _ _ _ _               _ _ _ _ _ F11
+SHIFTED(Kc9) SHIFTED(Kc0) F14 F15 F16 _    _ Quote F17 F18 _ F11
 _ _ _ _ _ _               _ _ F12
 """
 encoders = [["MouseWheelUp", "MouseWheelDown"]]
@@ -164,6 +164,13 @@ operations = [
 [behavior.fork]
 forks = [
   { trigger = "F24", negative_output = "Delete", positive_output = "Escape", match_any = "LShift|RShift" },
+  # F14-F18 are internal triggers used only on FUNCTION, not emitted F-keys.
+  # Matching Shift is suppressed before applying the chosen output's modifiers.
+  { trigger = "F14", negative_output = "WM(LeftBracket,LShift)", positive_output = "LeftBracket", match_any = "LShift|RShift" }, # { / [
+  { trigger = "F15", negative_output = "WM(RightBracket,LShift)", positive_output = "RightBracket", match_any = "LShift|RShift" }, # } / ]
+  { trigger = "F16", negative_output = "WM(Minus,LShift)", positive_output = "Slash", match_any = "LShift|RShift" }, # _ / /
+  { trigger = "F17", negative_output = "WM(Kc8,LShift)", positive_output = "WM(Kc6,LShift)", match_any = "LShift|RShift" }, # * / ^
+  { trigger = "F18", negative_output = "WM(Backslash,LShift)", positive_output = "Backslash", match_any = "LShift|RShift" }, # | / backslash
 ]
 
 [[behavior.auto_mouse_layer]]

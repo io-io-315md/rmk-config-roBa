@@ -28,6 +28,23 @@ existing ZMK repository.
 - PMW3610 reports at 125 Hz to avoid flooding the BLE event path
 - The host connection uses 1M PHY; the split link between halves remains 2M PHY
 
+## Function-layer symbols
+
+Hold the left thumb Zen/Han key to activate layer 1 (FUNCTION). The row below
+the numbers has the following symbols, from left to right on each half:
+
+| Half | Layer 1 | Layer 1 + Shift |
+| --- | --- | --- |
+| Left | `( ) { } _` | `( ) [ ] /` |
+| Right, starting at the base-layer N position | `' * \|` | `" ^ \` |
+
+Both Left Shift and Right Shift select the alternate symbols. The parentheses
+remain parentheses with Shift held, and the double quote is the ASCII `"`.
+The key below the encoder, the key immediately left of N, and the two keys
+right of the new right-hand symbols are unchanged. The base layer and all other
+layers are unchanged. Internal F14-F18 triggers keep the custom Shift behavior
+scoped to the new FUNCTION bindings.
+
 ## Build
 
 GitHub Actions builds both UF2 files on every push to `main`. Download the
